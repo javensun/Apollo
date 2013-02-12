@@ -61,6 +61,12 @@
 	        android:layout_width="match_parent"
 	        android:hint="Longitude"/>
         <Button 
+            android:layout_height="wrap_content"
+            android:layout_width = "match_parent"
+            android:text="Select a location"
+            android:id="@+id/btn_select_location" />
+"
+        <Button 
 	        android:layout_height="wrap_content"
 	        android:layout_width="match_parent"
 	        android:text="Pick a pic"
