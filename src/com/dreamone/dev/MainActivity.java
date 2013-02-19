@@ -8,6 +8,8 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.provider.MediaStore;
 import android.text.TextUtils;
 import android.util.Log;
@@ -37,9 +39,11 @@ import com.weibo.sdk.android.util.Utility;
 public class MainActivity extends Activity {
 
     private Weibo mWeibo;
-    private static final String CONSUMER_KEY = "966056985";// 替换为开发者的appkey，例如"1646212860";
-//    private static final String CONSUMER_KEY = "1060964734";// 替换为开发者的appkey，例如"1646212860";
+    private static final String CONSUMER_KEY = "966056985";//掌中新浪
     private static final String REDIRECT_URL = "http://www.sina.com";
+//    private static final String CONSUMER_KEY = "783190658";//Acer平板电脑, Not Work.
+//    private static final String REDIRECT_URL = "http://www.acer.com.cn";//Acer平板电脑
+//    private static final String CONSUMER_KEY = "1060964734";// 替换为开发者的appkey，例如"1646212860";
     private Button authBtn, ssoBtn, cancelBtn;
     private TextView mText;
     private Button mUpdateBtn, mAddPicBtn, mSelectLocBtn;
@@ -49,12 +53,28 @@ public class MainActivity extends Activity {
 	private String mLatitude, mLongitude;
     public static final int REQUEST_CODE_PICK_PICTURE = 0;
     public static final int REQUEST_CODE_SELECT_LOCATION = 1;
+    public static final int UPDATE_SUCCESS = 0;
+    
+    private Handler mUIHandler = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            switch(msg.what) {
+                case UPDATE_SUCCESS: 
+                    Toast.makeText(MainActivity.this, "Success", Toast.LENGTH_SHORT).show();
+                    break;
+                default:
+                    break;
+            }
+        }
+    };
+    
     private RequestListener updateListner = new RequestListener() {
 
 		@Override
 		public void onComplete(String response) {
 			// TODO Auto-generated method stub
 			Log.d("SWJ","updateListner onComplete repsonse:"+response);
+			mUIHandler.sendEmptyMessage(UPDATE_SUCCESS);
 		}
 
 		@Override
