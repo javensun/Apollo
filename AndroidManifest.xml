@@ -4,7 +4,7 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="4"
+        android:minSdkVersion="11"
         android:targetSdkVersion="15" />
 
     <permission
@@ -45,7 +45,7 @@
     <application
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_label"
-        android:theme="@style/AppTheme" >
+        android:theme="@android:style/Theme.Holo.Light.DarkActionBar" >
         <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
             android:value="AIzaSyAPcdMWdNLXuVvJujE4YkQS5fGsLedCFNU" />
@@ -65,7 +65,11 @@
         </activity>
         <activity android:name=".APITypeListActivity" >
         </activity>
-        <activity android:name="com.dreamone.dev.ShareActivity" >
+        <activity android:name="com.dreamone.dev.EditWeiboActivity" >
+            <intent-filter>
+                <action android:name="com.dreamone.action.test_edit_activity"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
         </activity>
         <activity android:name=".BlogFunActivity" >
         </activity>

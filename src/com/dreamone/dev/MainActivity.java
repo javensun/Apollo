@@ -46,7 +46,7 @@ public class MainActivity extends Activity {
 //    private static final String CONSUMER_KEY = "1060964734";// 替换为开发者的appkey，例如"1646212860";
     private Button authBtn, ssoBtn, cancelBtn;
     private TextView mText;
-    private Button mUpdateBtn, mAddPicBtn, mSelectLocBtn;
+    private Button mUpdateBtn, mAddPicBtn, mSelectLocBtn, mTestEditActivityBtn;
     private EditText contentText, lonText, latText;
     private ImageView mPictureView;
 	private String mPicPath;
@@ -103,6 +103,7 @@ public class MainActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        initViews();
         mWeibo = Weibo.getInstance(CONSUMER_KEY, REDIRECT_URL);
 
         authBtn = (Button) findViewById(R.id.auth);
@@ -213,7 +214,18 @@ public class MainActivity extends Activity {
 
     }
 
-    @Override
+    private void initViews() {
+    	mTestEditActivityBtn = (Button) findViewById(R.id.TestEditActivity);
+    	mTestEditActivityBtn.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent("com.dreamone.action.test_edit_activity");
+				startActivity(intent);
+			}
+    	});
+	}
+
+	@Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.activity_main, menu);
         return true;
