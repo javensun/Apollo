@@ -1,86 +1,95 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.dreamone.dev"
-    android:versionCode="1"
-    android:versionName="1.0" >
+          package="com.dreamone.dev"
+          android:versionCode="1"
+          android:versionName="1.0">
 
     <uses-sdk
-        android:minSdkVersion="11"
-        android:targetSdkVersion="15" />
+            android:minSdkVersion="14"
+            android:targetSdkVersion="15"/>
 
     <permission
-        android:name="com.dreamone.dev.permission.MAPS_RECEIVE"
-        android:protectionLevel="signature" />
+            android:name="com.dreamone.dev.permission.MAPS_RECEIVE"
+            android:protectionLevel="signature"/>
 
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <uses-permission android:name="android.permission.WRITE_APN_SETTINGS" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="com.dreamone.dev.permission.MAPS_RECEIVE" />
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_APN_SETTINGS"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="com.dreamone.dev.permission.MAPS_RECEIVE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
     <!-- SDK离线地图和cache功能需要读写外部存储器 -->
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" >
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE">
     </uses-permission>
     <!-- 获取设置信息和详情页直接拨打电话需要以下权限 -->
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" >
+    <uses-permission android:name="android.permission.READ_PHONE_STATE">
     </uses-permission>
-    <uses-permission android:name="android.permission.CALL_PHONE" >
+    <uses-permission android:name="android.permission.CALL_PHONE">
     </uses-permission>
-    
+
     <!-- Requiring OpenGL ES version 2 -->
     <uses-feature
-        android:glEsVersion="0x00020000"
-        android:required="true" />
+            android:glEsVersion="0x00020000"
+            android:required="true"/>
 
-        <supports-screens
-        android:anyDensity="true"
-        android:largeScreens="true"
-        android:normalScreens="true"
-        android:resizeable="true"
-        android:smallScreens="true" />
+    <supports-screens
+            android:anyDensity="true"
+            android:largeScreens="true"
+            android:normalScreens="true"
+            android:resizeable="true"
+            android:smallScreens="true"/>
 
     <application
-        android:icon="@drawable/ic_launcher"
-        android:label="@string/app_label"
-        android:theme="@android:style/Theme.Holo.Light.DarkActionBar" >
+            android:name=".ApolloApplication"
+            android:icon="@drawable/ic_launcher"
+            android:label="Apollo"
+            android:theme="@android:style/Theme.Holo.Light.DarkActionBar">
         <meta-data
-            android:name="com.google.android.maps.v2.API_KEY"
-            android:value="AIzaSyAPcdMWdNLXuVvJujE4YkQS5fGsLedCFNU" />
-         >
-        <activity
-            android:name="com.dreamone.dev.MainActivity"
-            android:label="@string/title_activity_main" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                android:name="com.google.android.maps.v2.API_KEY"
+                android:value="AIzaSyAPcdMWdNLXuVvJujE4YkQS5fGsLedCFNU"/>
+        >
 
-                <category android:name="android.intent.category.LAUNCHER" />
+        <activity android:name=".SelectLoginTypeActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
         <activity
-            android:name="com.dreamone.dev.GoogleMapActivity"
-            android:label="@string/title_activity_main" >
+                android:name="com.dreamone.dev.MainActivity"
+                android:label="@string/title_activity_main">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
         </activity>
-        <activity android:name=".APITypeListActivity" >
+        <activity
+                android:name="com.dreamone.dev.GoogleMapActivity"
+                android:label="@string/title_activity_main">
         </activity>
-        <activity android:name="com.dreamone.dev.EditWeiboActivity" >
+
+        <activity android:name="com.dreamone.dev.EditWeiboActivity">
             <intent-filter>
                 <action android:name="com.dreamone.action.test_edit_activity"/>
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </activity>
-        <activity android:name=".BlogFunActivity" >
-        </activity>
-        
+
 
         <activity
-            android:name="com.dreamone.dev.BaiduMapActivity"
-            android:configChanges="orientation|keyboardHidden"
-            android:label="@string/app_name"
-            android:screenOrientation="sensor" >
+                android:name="com.dreamone.dev.BaiduMapActivity"
+                android:configChanges="orientation|keyboardHidden"
+                android:label="@string/app_name"
+                android:screenOrientation="sensor">
         </activity>
+        <activity
+                android:name=".wxapi.WXEntryActivity"
+                android:exported="false"/>
     </application>
 
 </manifest>

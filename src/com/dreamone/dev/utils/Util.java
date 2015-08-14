@@ -1,4 +1,4 @@
-package com.dreamone.dev;
+package com.dreamone.dev.utils;
 
 import android.app.Activity;
 import android.widget.TextView;

@@ -22,6 +22,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.dreamone.dev.utils.Constants;
 import com.weibo.sdk.android.Oauth2AccessToken;
 import com.weibo.sdk.android.Weibo;
 import com.weibo.sdk.android.WeiboAuthListener;
@@ -32,18 +33,15 @@ import com.weibo.sdk.android.keep.AccessTokenKeeper;
 import com.weibo.sdk.android.net.RequestListener;
 import com.weibo.sdk.android.sso.SsoHandler;
 import com.weibo.sdk.android.util.Utility;
-/**
- * 
- * @author liyan (liyan9@staff.sina.com.cn)
- */
+
 public class MainActivity extends Activity {
 
     private Weibo mWeibo;
-    private static final String CONSUMER_KEY = "966056985";//掌中新浪
+//    private static final String CONSUMER_KEY = "966056985";//掌中新浪
     private static final String REDIRECT_URL = "http://www.sina.com";
 //    private static final String CONSUMER_KEY = "783190658";//Acer平板电脑, Not Work.
 //    private static final String REDIRECT_URL = "http://www.acer.com.cn";//Acer平板电脑
-//    private static final String CONSUMER_KEY = "1060964734";// 替换为开发者的appkey，例如"1646212860";
+    private static final String CONSUMER_KEY = "1060964734";// 替换为开发者的appkey，例如"1646212860";
     private Button authBtn, ssoBtn, cancelBtn;
     private TextView mText;
     private Button mUpdateBtn, mAddPicBtn, mSelectLocBtn, mTestEditActivityBtn;
@@ -152,8 +150,6 @@ public class MainActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				String content = contentText.getText().toString();
-//				String lat = latText.getText().toString();
-//				String lon = lonText.getText().toString();
 				String lat = String.valueOf(mLatitude);
 				String lon = String.valueOf(mLongitude);
 				Log.d("SWJ","weibo content = "+content+"; lat="+lat+"; lon="+lon);

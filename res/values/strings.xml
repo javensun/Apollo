@@ -21,5 +21,10 @@
     <string name="weibosdk_forward">转发</string>
     <string name="weibosdk_fav">收藏</string>
     <string name="testcontent"></string>
+    <string name="send_succeeded">发送成功</string>
+    <string name="send_cancelled">发送取消</string>
+    <string name="send_denied">发送被拒绝</string>
+    <string name="send_failed">发送失败</string>
+    <string name="unknow_error">未知错误</string>
 
 </resources>
