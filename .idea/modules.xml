@@ -3,7 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/MapActivity.iml" filepath="$PROJECT_DIR$/MapActivity.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../../../samples/WeChatSDK_sample_Android/amm_sdk_sample.iml" filepath="$PROJECT_DIR$/../../../samples/WeChatSDK_sample_Android/amm_sdk_sample.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../../samples/weibo_android_sdk/demo-src/WeiboSDK/WeiboSDK.iml" filepath="$PROJECT_DIR$/../../../samples/weibo_android_sdk/demo-src/WeiboSDK/WeiboSDK.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../../samples/weibo_android_sdk/demo-src/WeiboSDKDemo/WeiboSDKDemo.iml" filepath="$PROJECT_DIR$/../../../samples/weibo_android_sdk/demo-src/WeiboSDKDemo/WeiboSDKDemo.iml" />
     </modules>
   </component>
 </project>

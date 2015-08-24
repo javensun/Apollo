@@ -27,4 +27,12 @@
     <string name="send_failed">发送失败</string>
     <string name="unknow_error">未知错误</string>
 
+
+
+    <string name="weibosdk_demo_toast_share_success">分享成功</string>
+    <string name="weibosdk_demo_toast_share_failed">分享失败</string>
+    <string name="weibosdk_demo_toast_share_canceled">取消分享</string>
+
+    <string name="login_with_weixin">微信登录</string>
+    <string name="login_with_weibo">微博登录</string>
 </resources>

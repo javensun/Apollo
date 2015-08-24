@@ -17,8 +17,7 @@ import com.tencent.mm.sdk.modelmsg.WXMediaMessage;
 import com.tencent.mm.sdk.openapi.IWXAPI;
 import com.tencent.mm.sdk.openapi.IWXAPIEventHandler;
 import com.tencent.mm.sdk.openapi.WXAPIFactory;
-import net.sourceforge.simcpux.GetFromWXActivity;
-import net.sourceforge.simcpux.ShowFromWXActivity;
+
 
 public class WXEntryActivity extends Activity implements IWXAPIEventHandler {
 
@@ -79,31 +78,32 @@ public class WXEntryActivity extends Activity implements IWXAPIEventHandler {
     }
 
     private void goToGetMsg() {
-        Intent intent = new Intent(this, GetFromWXActivity.class);
-        intent.putExtras(getIntent());
-        startActivity(intent);
-        finish();
+        toast("goToGetMsg()");
+//        Intent intent = new Intent(this, GetFromWXActivity.class);
+//        intent.putExtras(getIntent());
+//        startActivity(intent);
+//        finish();
     }
 
     private void goToShowMsg(ShowMessageFromWX.Req showReq) {
-        WXMediaMessage wxMsg = showReq.message;
-        WXAppExtendObject obj = (WXAppExtendObject) wxMsg.mediaObject;
-
-        StringBuffer msg = new StringBuffer();
-        msg.append("description: ");
-        msg.append(wxMsg.description);
-        msg.append("\n");
-        msg.append("extInfo: ");
-        msg.append(obj.extInfo);
-        msg.append("\n");
-        msg.append("filePath: ");
-        msg.append(obj.filePath);
-
-        Intent intent = new Intent(this, ShowFromWXActivity.class);
-        intent.putExtra(Constants.WeiXin.ShowMsgActivity.STitle, wxMsg.title);
-        intent.putExtra(Constants.WeiXin.ShowMsgActivity.SMessage, msg.toString());
-        intent.putExtra(Constants.WeiXin.ShowMsgActivity.BAThumbData, wxMsg.thumbData);
-        startActivity(intent);
+        toast("goToShowMsg()");
+//        WXMediaMessage wxMsg = showReq.message;
+//        WXAppExtendObject obj = (WXAppExtendObject) wxMsg.mediaObject;
+//        StringBuffer msg = new StringBuffer();
+//        msg.append("description: ");
+//        msg.append(wxMsg.description);
+//        msg.append("\n");
+//        msg.append("extInfo: ");
+//        msg.append(obj.extInfo);
+//        msg.append("\n");
+//        msg.append("filePath: ");
+//        msg.append(obj.filePath);
+//
+//        Intent intent = new Intent(this, ShowFromWXActivity.class);
+//        intent.putExtra(Constants.WeiXin.ShowMsgActivity.STitle, wxMsg.title);
+//        intent.putExtra(Constants.WeiXin.ShowMsgActivity.SMessage, msg.toString());
+//        intent.putExtra(Constants.WeiXin.ShowMsgActivity.BAThumbData, wxMsg.thumbData);
+//        startActivity(intent);
         finish();
     }
     private void toast(String s) {
