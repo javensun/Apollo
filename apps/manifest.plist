@@ -11,19 +11,19 @@
 					<key>kind</key>
 					<string>software-package</string>
 					<key>url</key>
-					<string>http://jz-public-kv.ufile.ucloud.com.cn/App_%2Fv1.0.2-0408signed.ipa</string>
+					<string>http://jz-public-kv.ufile.ucloud.com.cn/Apps%2Fios-1.0.2.ipa</string>
 				</dict>
 				<dict>
 					<key>kind</key>
 					<string>display-image</string>
 					<key>url</key>
-					<string>https://www.baidu.com/img/bd_logo1.png</string>
+					<string>http://jz-public-kv.ufile.ucloud.com.cn/logo-60%403x.png</string>
 				</dict>
 				<dict>
 					<key>kind</key>
 					<string>full-size-image</string>
 					<key>url</key>
-					<string>https://www.baidu.com/img/bd_logo1.png</string>
+					<string>http://jz-public-kv.ufile.ucloud.com.cn/logo-60%403x.png</string>
 				</dict>
 			</array>
 			<key>metadata</key>
@@ -35,7 +35,7 @@
 				<key>kind</key>
 				<string>software</string>
 				<key>title</key>
-				<string>小CAI猪</string>
+				<string>小彩猪</string>
 			</dict>
 		</dict>
 	</array>
